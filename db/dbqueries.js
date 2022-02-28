@@ -1,16 +1,20 @@
 const db = require("./dbConnection");
 
-const postUser = async (newUser) => {
-  const { username, email, password } = newUser;
-  const [id] = await db("users")
-    .insert({
-      username,
-      email,
-      password,
-    })
-    .returning("id");
+module.exports = {
+  async postUser(newUser) {
+    const { username, email, password } = newUser;
+    const [id] = await db("users")
+      .insert({
+        username,
+        email,
+        password,
+      })
+      .returning(["id", "username", "created_at"]);
 
-  return id;
+    return id;
+  },
+  async allUsers() {
+    const users = await db("users").select("id", "username");
+    return users;
+  },
 };
-
-module.exports = { postUser };
