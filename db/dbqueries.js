@@ -18,3 +18,5 @@ module.exports = {
     return users;
   },
 };
+
+// module.exports = { postUser, allUsers }

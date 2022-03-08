@@ -5,6 +5,7 @@ exports.up = function (knex) {
     table.string("email").notNullable().unique();
     table.string("password").notNullable();
     table.timestamps(true, true); // 1st arg = created at, 2nd arg = updated at
+    table.string("new");
   });
 };
 
