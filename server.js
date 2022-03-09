@@ -20,5 +20,7 @@ app.listen(port, () => {
 
 // npx knex init
 // npx knex migrate:make users --knexfile db/knexfile.js
+// npx knex migrate:make tasks --knexfile db/knexfile.js
+// npx knex migrate:make categories --knexfile db/knexfile.js
 // npx knex migrate:latest --knexfile db/knexfile.js
 // npx knex migrate:down --knexfile db/knexfile.js
